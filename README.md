@@ -153,7 +153,7 @@ https://server.ru/api/v1/ping
 **_URL_**:
 
 ```html
-https://server.ru/api/v1/Requests/orders
+https://server.ru/api/v1/orders
 ```
 
 Тело запроса содержит _JSON_ с следующими параметрами:
@@ -187,7 +187,7 @@ https://server.ru/api/v1/Requests/orders
 **_URL_**:
 
 ```html
-https://server.ru/api/v1/Requests/orders
+https://server.ru/api/v1/orders
 ```
 
 **Тело запроса в формате _JSON_**:
