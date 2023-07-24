@@ -1059,12 +1059,30 @@ https://server.ru/api/v1/visits/
 
 **Ответ в формате _JSON_**:
 
-docNumber - номер созданного/обновленного документа
+Возвращается тело переданного запроса (\*)
 
 ```json
 {
   "result": {
-    "docNumber": "000000002"
+    "uID": "632475d5-ad80-4cb3-a33b-de57cae4c41a",
+    "date": "2023-07-17",
+    "userUid": "000001",
+    "tradeshopUid": "00-00003349",
+    "dateStart": "2023-06-16T18:03:01.450",
+    "dateEnd": "2023-06-16T18:03:01.450",
+    "utcDateTimeStart": "2023-06-16T18:03:01.450",
+    "utcDateTimeEnd": "2023-06-16T18:03:01.450",
+    "latitudeStart": "59.8274333",
+    "longitudeStart": "30.316085",
+    "latitudeEnd": "30.316085",
+    "longitudeEnd": "59.8274333",
+    "statusId": 2,
+    "odometrStart": 344,
+    "odometrEnd": 456,
+    "odometrPhotoStart": "",
+    "odometrPhotoEnd": "",
+    "taskUid": "",
+    "mobileState": ""
   },
   "error": null,
   "errorCode": null,
@@ -2211,7 +2229,7 @@ https://server.ru/api/v1/tasks/forUser/?userId={userId}
 | authorUserUid    |           Строка            |      Да      | На данный момент не используется                                    |
 | priority         |          Число (1)          |      Да      | Приоритет (1 = Истина, 0 = Ложь)                                    |
 | active           |          Число (1)          |      Да      | 1 не помечен на удаление, 0 помечен на удаление                     |
-| ParentTaskUid    |         Строка (36)         |      Да      | Идентификатор связанной задачи в МП                                 |
+| parentTaskUid    |         Строка (36)         |      Да      | Идентификатор связанной задачи в МП                                 |
 | dateDeleted      | Дата (строка в формате UTC) |      Да      | Дата удаления                                                       |
 | mobileState      |            Число            |      Да      | На данный момент не используется                                    |
 | dateStart        | Дата (строка в формате UTC) |      Да      | На данный момент не используется                                    |
@@ -2251,7 +2269,7 @@ https://server.ru/api/v1/tasks/forUser?userId=000001
       "authorUserUid": "",
       "priority": 1,
       "active": 1,
-      "ParentTaskUid": "",
+      "parentTaskUid": "",
       "dateDeleted": "0001-01-01T00:00:00",
       "mobileState": 1,
       "dateStart": "0001-01-01T00:00:00",
@@ -2989,9 +3007,9 @@ https://server.ru/api/v1/taskOperationTypes
 | ------------ | :----------: | :----------: | :-------------------------------------------------- |
 | id           |  Строка (5)  |      Да      | Код работы                                          |
 | description  | Строка (100) |      Да      | Наименование                                        |
-| ShortName    | Строка (20)  |      Да      | Обозначение                                         |
-| TaskTypeId   |  Число (3)   |      Да      | Код типа задания                                    |
-| QuickComment |    Число     |      Да      | Быстрый комментарий (если да, то 1, если нет, то 0) |
+| shortName    | Строка (20)  |      Да      | Обозначение                                         |
+| taskTypeId   |  Число (3)   |      Да      | Код типа задания                                    |
+| quickComment |    Число     |      Да      | Быстрый комментарий (если да, то 1, если нет, то 0) |
 
 ### Пример
 
@@ -3009,16 +3027,16 @@ https://server.ru/api/v1/taskOperationTypes
     {
       "id": 1,
       "description": "Работа 1",
-      "ShortName": "р1",
-      "TaskTypeId": 1,
-      "QuickComment": 1
+      "shortName": "р1",
+      "taskTypeId": 1,
+      "quickComment": 1
     },
     {
       "id": 2,
       "description": "Работа 2",
-      "ShortName": "р2",
-      "TaskTypeId": 1,
-      "QuickComment": 0
+      "shortName": "р2",
+      "taskTypeId": 1,
+      "quickComment": 0
     }
   ],
   "error": null,
